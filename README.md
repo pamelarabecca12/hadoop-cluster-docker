@@ -70,8 +70,6 @@ Hello    2
 
 ##### 1. Pull Docker images and clone the GitHub repository as in the previous step
 
-do 1~3 like section A
-
 ##### 2. Rebuild the Docker image
 
 ```
