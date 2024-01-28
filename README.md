@@ -84,7 +84,7 @@ sudo ./resize-cluster.sh 5
 ```
 sudo ./start-container.sh 5
 ```
-- based on the specified parameter using the script start-container.sh. 
+- Based on the specified parameter using the script start-container.sh. 
 
 ##### 4. Run the Hadoop cluster as in the previous step
 
