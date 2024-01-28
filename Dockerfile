@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 
-MAINTAINER PamelaRabecca <pamelarabecca12@gmail.com>
+MAINTAINER KiwenLau <kiwenlau@gmail.com>
 
 WORKDIR /root
 
@@ -8,7 +8,7 @@ WORKDIR /root
 RUN apt-get update && apt-get install -y openssh-server openjdk-7-jdk wget
 
 # install hadoop 2.7.2
-RUN wget https://github.com/pamelarabecca12/compile-hadoop/releases/download/2.7.2/hadoop-2.7.2.tar.gz && \
+RUN wget https://github.com/kiwenlau/compile-hadoop/releases/download/2.7.2/hadoop-2.7.2.tar.gz && \
     tar -xzvf hadoop-2.7.2.tar.gz && \
     mv hadoop-2.7.2 /usr/local/hadoop && \
     rm hadoop-2.7.2.tar.gz
@@ -47,3 +47,4 @@ RUN chmod +x ~/start-hadoop.sh && \
 RUN /usr/local/hadoop/bin/hdfs namenode -format
 
 CMD [ "sh", "-c", "service ssh start; bash"]
+
