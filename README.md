@@ -1,34 +1,34 @@
 ## Run Hadoop Cluster within Docker Containers
 
 
-### 3 Nodes Hadoop Cluster
+### Setting up a 3 Nodes Hadoop Cluster
 
-##### 1. pull docker image
-
-```
-sudo docker pull kiwenlau/hadoop:1.0
-```
-
-##### 2. clone github repository
+##### 1. Pull the Docker image
 
 ```
-git clone https://github.com/kiwenlau/hadoop-cluster-docker
+sudo docker pull pamelarabecca12/hadoop:1.0
 ```
 
-##### 3. create hadoop network
+##### 2. Clone the GitHub repository
+
+```
+git clone https://github.com/pamelarabecca12/hadoop-cluster-docker
+```
+
+##### 3. Create a Hadoop network
 
 ```
 sudo docker network create --driver=bridge hadoop
 ```
 
-##### 4. start container
+##### 4. Start the Hadoop containers
 
 ```
 cd hadoop-cluster-docker
 sudo ./start-container.sh
 ```
 
-**output:**
+**Output:**
 
 ```
 start hadoop-master container...
@@ -36,22 +36,22 @@ start hadoop-slave1 container...
 start hadoop-slave2 container...
 root@hadoop-master:~# 
 ```
-- start 3 containers with 1 master and 2 slaves
-- you will get into the /root directory of hadoop-master container
+- Start 3 containers with 1 master and 2 slaves
+- Get into the /root directory of hadoop-master container
 
-##### 5. start hadoop
+##### 5. Run Hadoop
 
 ```
 ./start-hadoop.sh
 ```
 
-##### 6. run wordcount
+##### 6. Execute the word count 
 
 ```
 ./run-wordcount.sh
 ```
 
-**output**
+**Output**
 
 ```
 input file1.txt:
@@ -66,29 +66,27 @@ Hadoop    1
 Hello    2
 ```
 
-### Arbitrary size Hadoop cluster
+### Creating an Arbitrary Size Hadoop Cluster 
 
-##### 1. pull docker images and clone github repository
+##### 1. Pull Docker images and clone the GitHub repository as in the previous step
 
 do 1~3 like section A
 
-##### 2. rebuild docker image
+##### 2. Rebuild the Docker image
 
 ```
 sudo ./resize-cluster.sh 5
 ```
-- specify parameter > 1: 2, 3..
-- this script just rebuild hadoop image with different **slaves** file, which pecifies the name of all slave nodes
+- Specify parameter (number of node) > 1: 2, 3..
+- This script rebuild hadoop image with different **slaves** file, which specifies the name of all slave nodes
 
 
-##### 3. start container
+##### 3. Start the Hadoop containers
 
 ```
 sudo ./start-container.sh 5
 ```
-- use the same parameter as the step 2
+- based on the specified parameter using the script start-container.sh. 
 
-##### 4. run hadoop cluster 
-
-do 5~6 like section A
+##### 4. Run the Hadoop cluster as in the previous step
 
